@@ -2,12 +2,20 @@ import colors from 'vuetify/es5/util/colors'
 import { defineNuxtConfig } from '@nuxt/bridge'
 
 export default defineNuxtConfig({
+  runtimeConfig: {
+    public: {
+      test: 'thing',
+    },
+  },
+  publicRuntimeConfig: {
+    test: 'thing',
+  },
+
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
-
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - test-nuxt-2',
@@ -28,7 +36,7 @@ export default defineNuxtConfig({
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ['plugins/test-config.ts'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
